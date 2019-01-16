@@ -318,7 +318,7 @@ client.on('message', message => {
  var prefix = "&";
 if (message.content.startsWith(prefix + 'help-games')) {
     let pages = [`**
-	`=-=-=-=-=-= 🎯  Games Commands - اوامر الالعاب 🎯 =-=-=-=-=-=
+	=-=-=-=-=-= 🎯  Games Commands - اوامر الالعاب 🎯 =-=-=-=-=-=
     💠 -xo @user => Game XO | لعب اكس او
     💠 -rps => Rock & Paper & Scissors | لعبة حجر ورقة مقص
     💠 -slots => Game Of Fruits | لعبة الفواكه
