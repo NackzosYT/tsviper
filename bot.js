@@ -21,6 +21,11 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
  const dateFormat = require('dateformat'); 
  const pretty = require('pretty-ms') 
+    const prefix = "&"
+          var prefix = "&"     
+		   let prefix = "&"
+
+ 
 ,ti={}  
 ,spee={}; 
 
@@ -55,7 +60,6 @@ client.on('message', message => {
 //////////////////////
 const sWlc = {}
 client.on('message', message => {
-	 var prefix = "&";
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
@@ -71,7 +75,6 @@ const channel = sWlc[message.guild.id].channel
   }
 });
 client.on("guildMemberAdd", member => {
-	 var prefix = "&";
       if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
     channel: "welcome"
   }
@@ -155,7 +158,6 @@ client.on("guildMemberAdd", member => {
 //////////////
 //////////////////////help//////////////////////
 client.on('message', message => {
- var prefix = "&";
 if (message.content.startsWith(prefix + 'help')) {
     let pages = [`**
 ViperBot
@@ -263,7 +265,6 @@ Copyright � ViperBot 2019
 
 
 client.on('message', message => {
- var prefix = "&";
 if (message.content.startsWith(prefix + 'help-role')) {
     let pages = [`**
 &role @user <rank> : أعطاء رتبة لعضو معين
@@ -315,7 +316,6 @@ if (message.content.startsWith(prefix + 'help-role')) {
 
 
 client.on('message', message => {
- var prefix = "&";
 if (message.content.startsWith(prefix + 'help-games')) {
     let pages = [`**
 	=-=-=-=-=-= 🎯  Games Commands - اوامر الالعاب 🎯 =-=-=-=-=-=
@@ -561,7 +561,6 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
 client.on('message' , message => {
-  var prefix = "&";
   if(message.author.bot) return;
  
   if(message.content.startsWith(prefix + "xo")) {
@@ -775,7 +774,6 @@ client.on('message', message => {
  });
  
  client.on('message' , message => {
-  var prefix = "&";
   if(message.author.bot) return;
   if(message.content.startsWith(prefix + "ping")) {
  message.channel.send('Pong...').then((msg) => {
@@ -785,7 +783,6 @@ client.on('message', message => {
  });
  
 client.on('message', msg => {
-	var prefix = "&";
   if (msg.author.bot) return;
   if (!msg.content.startsWith(prefix)) return;
   let command = msg.content.split(" ")[0];
@@ -1053,7 +1050,6 @@ client.on("message", message => {
 //bc online
 
 
-  var prefix = "!";
 
   client.on("message", message => {
   
@@ -1095,7 +1091,6 @@ m.sendMessage(args)
 
 
 client.on('message', ra3d => {
-var prefix = "&";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
 if(ra3d.content.startsWith(prefix + 'ccolors')) {
     if(!args) return ra3d.channel.send('`How Many Colors??`');
@@ -1112,7 +1107,6 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
        });
 
 client.on('message', message => {
-var prefix = "&";
 var cats = ["http://www.shuuf.com/shof/uploads/2015/09/09/jpg/shof_b9d73150f90a594.jpg","https://haltaalam.info/wp-content/uploads/2015/05/0.208.png","https://haltaalam.info/wp-content/uploads/2015/05/266.png","https://haltaalam.info/wp-content/uploads/2015/05/250.png","https://haltaalam.info/wp-content/uploads/2017/02/0.2517.png","https://pbs.twimg.com/media/CP0mi02UAAA3U2z.png","http://www.shuuf.com/shof/uploads/2015/08/31/jpg/shof_3b74fa7295ec445.jpg","http://www.shuuf.com/shof/uploads/2015/08/22/jpg/shof_fa3be6ab68fb415.jpg","https://pbs.twimg.com/media/CSWPvmRUcAAeZbt.png","https://pbs.twimg.com/media/B18VworIcAIMGsE.png"]
         var args = message.content.split(" ").slice(1);
     if(message.content.startsWith(prefix + 'هل تعلم')) {
@@ -1125,7 +1119,6 @@ message.channel.sendEmbed(cat);
 
 client.on('message', message => {
      if(!message.channel.guild) return;
-var prefix = "&";
                 if(message.content.startsWith(prefix + 'allbots')) {
 
     
@@ -1147,7 +1140,6 @@ message.channel.send(embed)
 
 
 client.on("message", function(message) {
-	var prefix = "&";
    if(message.content.startsWith(prefix + "rps")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
     let messageRPS = message.content.split(" ").slice(2).join(" ");
@@ -1188,7 +1180,6 @@ reaction3.on("collect", r => {
 });
 
  client.on('message', message => {
-	 var prefix ="&";
  if(message.content.startsWith(prefix +"server")){
 if(!message.channel.guild) return message.reply(' ');
 const millis = new Date().getTime() - message.guild.createdAt.getTime();
@@ -1235,7 +1226,6 @@ client.on('message', message => {
 });
 
 client.on('message',async Epic => {
-  var prefix = "&" ;
   if(Epic.content.startsWith(prefix + "vonline")) {
   if(!Epic.guild.member(Epic.author).hasPermissions('MANAGE_CHANNELS')) return Epic.reply(':x: **I Dont Have Permissions**');
   if(!Epic.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return Epic.reply(':x: **You Dont Have Permissions**');
@@ -1253,7 +1243,6 @@ client.on('message',async Epic => {
 });
 
 client.on('message', message => {
-	var prefix = "&";
 if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'move')) {
  if (message.member.hasPermission("MOVE_MEMBERS")) {
@@ -1299,7 +1288,6 @@ message.react("❌")
 
 
 client.on('message', msg => {
-	var  prefix = "&";
  if (msg.content.startsWith(prefix + 'cal')) {
     let args = msg.content.split(" ").slice(1);
         const question = args.join(' ');
@@ -1323,7 +1311,6 @@ client.on('message', msg => {
 
 
 client.on('message', message => {
-	var prefix = "&";
 if (message.content.startsWith(prefix + 'tag')) {
     let args = message.content.split(" ").slice(1);
 if(!args[0]) return message.reply('Write Some Things');  
@@ -1337,7 +1324,6 @@ if(!args[0]) return message.reply('Write Some Things');
 
 
  client.on('message', message => {
-	    var prefix = "&";
               if(!message.channel.guild) return;
     if(message.content.startsWith(prefix + 'bc')) {
     if(!message.channel.guild) return message.channel.send('**This Command Only For Servers**').then(m => m.delete(5000));
@@ -1736,7 +1722,6 @@ msg.channel.send(embed).then(() => {
 
 
  client.on('message', message => {
-	 var prefix = "&";
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -1757,7 +1742,6 @@ if (command == "za5") {
 
 
 client.on("message", message => {
-	var prefix = "&";
 	var args = message.content.split(' ').slice(1); 
 	var msg = message.content.toLowerCase();
 	if( !message.guild ) return;
@@ -1842,7 +1826,6 @@ client.on('ready', () => {
   });
 
 client.on('message', message => {
-var prefix = "&";
       if(message.content === prefix + "hchannel") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms :x:');
@@ -1855,7 +1838,6 @@ var prefix = "&";
 
 
 client.on('message', message => {
-var prefix = "&";
       if(message.content === prefix + "schannel") {
       if(!message.channel.guild) return;
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply(':x:');
@@ -1882,7 +1864,6 @@ message.channel.send(`**# ${args}**`);
 
 client.on('message', async message =>{
   if (message.author.boss) return;
-	var prefix = "&";
 
 if (!message.content.startsWith(prefix)) return;
 	let command = message.content.split(" ")[0];
@@ -1987,7 +1968,6 @@ var fkk =[
 
 
    client.on("message", async message => {
-	   var prefix = "&";
     if(message.content == prefix+"فكك"){
         if(UserBlocked.has(message.guild.id)) return message.channel.send("هناك جلسة .")
         UserBlocked.add(message.guild.id)
@@ -2030,7 +2010,6 @@ var fkk =[
 
 
    client.on("message", async message => {
-var prefix = "&";
 var aoasm =[
     {q:"ما عاصمة **المغرب**",a:"الرباط"},
     {q:"ما عاصمة **افغانستان**",a:"كبل"},
@@ -2132,8 +2111,7 @@ var aoasm =[
 });
 
 client.on("message", message => {
-    const prefix = "&"
-              
+
           if(!message.channel.guild) return;
    if(message.author.bot) return;
       if(message.content === prefix + "image"){ 
@@ -2151,7 +2129,6 @@ client.on("message", message => {
   });
 
 client.on('message' , message => {
-var prefix = "&"
 if (message.author.bot) return;
 if (message.content.startsWith(prefix + "contact")) {
 if (!message.channel.guild) return;
@@ -2170,7 +2147,6 @@ client.users.get("349616310734553088").send(
 });
 
 client.on('message', message => {
-	var prefix = "&";
     if(message.content.startsWith(prefix + 'mvall')) {
      if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**:x: You Dont Have Perms `MOVE_MEMBERS`**');
        if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**:x: I Dont Have Perms `MOVE_MEMBERS`**");
@@ -2203,7 +2179,6 @@ if(message.content.startsWith("&slots")) {
 });
 
 client.on('message' , message => {
-var prefix = "&"
 if (message.author.bot) return;
 if (message.content.startsWith(prefix + "contact")) {
 if (!message.channel.guild) return message.reply("This Command Only For Servers");
@@ -2231,7 +2206,6 @@ message.channel.send(embed);
 });
 
 client.on('message', message => {
-	var prefix = "&"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -2268,7 +2242,6 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-	var prefix = "&"
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -2305,7 +2278,6 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-var prefix = "&";
        if(message.content === prefix + "mutechannel") {
                            if(!message.channel.guild) return message.reply('** This command only for servers**');
 
@@ -2400,7 +2372,6 @@ if(!message.channel.guild) return;
 });
 
 client.on('message', message => {
-            var prefix = "&";
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 
@@ -2432,7 +2403,6 @@ client.on('message', message => {
     }
 });
 client.on('message', omar => {
-var prefix = "&";
 if(omar.content.split(' ')[0] == prefix + 'dc') {  // delete all channels
 if (!omar.channel.guild) return;
 if(!omar.guild.member(omar.author).hasPermission("MANAGE_CHANNELS")) return omar.reply("**You Don't Have ` MANAGE_CHANNELS ` Permission**");
@@ -2453,7 +2423,6 @@ omar.reply("✅ `Success Deleted All Roles - Ranks`")
 });
 
 client.on('message', message => {
-	var prefix = "&";
    if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'clear')) {
 if(!message.channel.guild) return message.channel.send('**This Command is Just For Servers**').then(m => m.delete(5000));
@@ -2524,7 +2493,6 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 });
   
 client.on("message", message => {
-    var prefix = "&";
     const command = message.content.split(" ")[0];
 
     if(command == prefix+"vkick"){
