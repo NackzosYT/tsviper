@@ -22,8 +22,7 @@ const sql = require("sqlite");
  const dateFormat = require('dateformat'); 
  const pretty = require('pretty-ms') 
     const prefix = "&"
-          var prefix = "&"     
-		   let prefix = "&"
+   
 
  
 ,ti={}  
